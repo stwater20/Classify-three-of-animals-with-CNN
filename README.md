@@ -238,7 +238,7 @@ history = model.fit(X,y,batch_size=32,epochs=10,validation_split=0.3)
 
 
 ```python
-model.save('64x3-CNN.model')
+model.save('64x3-CNN.h5')
 ```
 
     WARNING:tensorflow:From C:\Users\box88\Anaconda3\envs\tensorflow_RNN\lib\site-packages\tensorflow_core\python\ops\resource_variable_ops.py:1781: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
@@ -291,7 +291,7 @@ def prepare(filepath):
 
 
 ```python
-#model = tf.keras.models.load_model("64x3-CNN.model")
+#model = tf.keras.models.load_model("64x3-CNN.h5")
 
 prediction = model.predict([prepare(r'C:\Users\box88\Desktop\ai\test\1.jpg')])
 print(prediction)

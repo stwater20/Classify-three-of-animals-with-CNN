@@ -180,7 +180,7 @@ history = model.fit(X,y,batch_size=32,epochs=10,validation_split=0.3)
 # In[11]:
 
 
-model.save('64x3-CNN.model')
+model.save('64x3-CNN.h5')
 
 
 # In[12]:
@@ -220,7 +220,7 @@ def prepare(filepath):
 # In[15]:
 
 
-#model = tf.keras.models.load_model("64x3-CNN.model")
+#model = tf.keras.models.load_model("64x3-CNN.h5")
 
 prediction = model.predict([prepare(r'C:\Users\box88\Desktop\ai\test\1.jpg')])
 print(prediction)
