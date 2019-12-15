@@ -26,7 +26,7 @@ First you should create a file name predection.py, then type these code:
     maxindex  = np.argmax(prediction)
     print(categories[maxindex])
     
-Second you can run this main.py and you will look the answer.
+Second you can run this predection.py and you will look the answer.
 
 Or you also can use the pred_test.py, the command is:
    
