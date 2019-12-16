@@ -20,6 +20,12 @@ First you should create a file name predection.py, then type these code:
     import numpy as np
     import cv2
     import tensorflow as tf
+    IMG_SIZE=150
+    def prepare(filepath): 
+        img_array = cv2.imread(filepath)  
+        img_array = img_array/255.0
+        new_array = cv2.resize(img_array, (IMG_SIZE, IMG_SIZE)) 
+        return new_array.reshape(-1, IMG_SIZE, IMG_SIZE,3) 
     model = tf.keras.models.load_model("64x3-CNN.model")
     testing = r"TYPE YOUR PICTURE URL" # example: C:\Users\box88\Desktop\ai\1.jpg
     prediction = model.predict([prepare(testing)])
@@ -30,7 +36,7 @@ Second you can run this predection.py and you will look the answer.
 
 Or you also can use the pred_test.py, the command is:
    
-    pred_test.py PICTURE_FILE_PATH
+    python pred_test.py PICTURE_FILE_PATH
 ### What is the output?
 The output is one of the categories which include Cat,Dog and Squireel.
 The model will choose the most rate in the categories.

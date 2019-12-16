@@ -4,6 +4,7 @@ import cv2
 import tensorflow as tf
 
 def main():
+    print(sys.argv[0])
     categories = ["Cat","Dog","Squirrel"]
     model = tf.keras.models.load_model("64x3-CNN.model")
     x = sys.argv[1]

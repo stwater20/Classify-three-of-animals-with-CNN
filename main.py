@@ -23,6 +23,12 @@
 #     import numpy as np
 #     import cv2
 #     import tensorflow as tf
+#     IMG_SIZE=150
+#     def prepare(filepath): 
+#         img_array = cv2.imread(filepath)  
+#         img_array = img_array/255.0
+#         new_array = cv2.resize(img_array, (IMG_SIZE, IMG_SIZE)) 
+#         return new_array.reshape(-1, IMG_SIZE, IMG_SIZE,3) 
 #     model = tf.keras.models.load_model("64x3-CNN.model")
 #     testing = r"TYPE YOUR PICTURE URL" # example: C:\Users\box88\Desktop\ai\1.jpg
 #     prediction = model.predict([prepare(testing)])
@@ -33,7 +39,7 @@
 # 
 # Or you also can use the pred_test.py, the command is:
 #    
-#     pred_test.py PICTURE_FILE_PATH
+#     python pred_test.py PICTURE_FILE_PATH
 # ### What is the output?
 # The output is one of the categories which include Cat,Dog and Squireel.
 # The model will choose the most rate in the categories.
@@ -177,7 +183,7 @@ model.summary()
 history = model.fit(X,y,batch_size=32,epochs=10,validation_split=0.3)
 
 
-# In[11]:
+# In[17]:
 
 
 model.save('64x3-CNN.h5')
@@ -217,10 +223,10 @@ def prepare(filepath):
     return new_array.reshape(-1, IMG_SIZE, IMG_SIZE,3) 
 
 
-# In[15]:
+# In[18]:
 
 
-#model = tf.keras.models.load_model("64x3-CNN.h5")
+model = tf.keras.models.load_model("64x3-CNN.h5")
 
 prediction = model.predict([prepare(r'C:\Users\box88\Desktop\ai\test\1.jpg')])
 print(prediction)
